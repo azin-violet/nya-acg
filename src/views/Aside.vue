@@ -5,8 +5,8 @@
       'w-[var(--sidebar-width)]': !appStore.collapse,
       'w-[var(--sidebar-width-collapse)]': appStore.collapse && !appStore.isMobile,
       'w-0': appStore.collapse && appStore.isMobile,
-      fixed: appStore.isMobile,
-      sticky: !appStore.isMobile,
+      'fixed': appStore.isMobile,
+      'sticky': !appStore.isMobile,
     }"
   >
     <!-- sidebar header -->
@@ -26,17 +26,16 @@
     <!-- sidebar header end -->
 
     <!-- sidebar menu -->
-    <div class="overflow-y-auto h-[calc(100vh-var(--header-height))] pb-4rem">
-      <div class="h-800px bg-gray-600"></div>
+    <div class="overflow-y-auto h-[calc(100vh-var(--header-height))]">
+      <MenuItem url="#item-1" title="在线动漫" v-for="idx in 15" :key="idx" />
+      <!-- anchor menu item -->
+      <MenuItem url="info" title="投稿&反馈" class="bg-[#fff] sticky left-0 bottom-0" />
     </div>
     <!-- sidebar menu end -->
-
-    <!-- sidebar anchor -->
-    <div class="h-4rem bg-red-400 z-1 absolute left-0 bottom-0 w-full"></div>
-    <!-- sidebar anchor end -->
   </aside>
 </template>
 <script setup lang="ts">
+import MenuItem from '@/components/MenuItem.vue';
 import { useAppStore } from '@/store/app'
 
 const appStore = useAppStore()

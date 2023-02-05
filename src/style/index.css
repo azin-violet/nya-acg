@@ -7,8 +7,8 @@
   --color-tooltip-bg: #555;
   --font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   --header-height: 4rem;
-  --sidebar-width: 16rem;
-  --sidebar-width-collapse: 4rem;
+  --sidebar-width: 14rem;
+  --sidebar-width-collapse: 60px;
 
   --windi-bg: #fcfcfc;
   --windi-hover-bg: #f6f6f6;
