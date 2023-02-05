@@ -26,7 +26,7 @@
     <!-- sidebar header end -->
 
     <!-- sidebar menu -->
-    <div class="bg-red-300 overflow-y-auto h-[calc(100vh-var(--header-height))] pb-4rem">
+    <div class="overflow-y-auto h-[calc(100vh-var(--header-height))] pb-4rem">
       <div class="h-800px bg-gray-600"></div>
     </div>
     <!-- sidebar menu end -->
