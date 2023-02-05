@@ -1,7 +1,7 @@
 <template>
   <div class="px-2 container">
-    <!-- <AcgSection v-for="section in sitesData" v-bind="section" /> -->
-    <div class="h-1000px bg-green-500"></div>
+    <AcgSection v-for="section in sitesData" v-bind="section" />
+    <div class="h-5rem"></div>
     <footer>
       <div class="p-4 text-xs">
         Copyright © 2023 V-ACG&nbsp;&nbsp;&nbsp;Design by <strong>Azin</strong>&nbsp;|&nbsp;<strong
