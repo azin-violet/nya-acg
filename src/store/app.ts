@@ -5,6 +5,7 @@ export const useAppStore = defineStore({
   state: () => ({
     collapse: false,
     isMobile: false,
+    title: 'V-Acg'
   }),
   getters: {
   },
