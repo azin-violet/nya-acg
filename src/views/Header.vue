@@ -1,10 +1,13 @@
 <template>
   <header
-    class="sticky top-0 left-0 backdrop-filter backdrop-blur-sm z-10 h-[var(--header-height)] w-full"
+    class="sticky top-0 left-0 backdrop-filter backdrop-blur-sm z-10 h-$header-height w-full text-xl"
   >
     <div class="flex h-full px-2 justify-between">
       <div class="flex items-center">
-        <button @click="toggle()" class="flex items-center text-xl hover:text-[var(--color-hover)]">
+        <button
+          @click="toggleSidebar()"
+          class="flex items-center hover:text-$color-hover acg-transition"
+        >
           <IconMenu />
         </button>
       </div>
@@ -15,7 +18,7 @@
         </RouterLink>
       </div> -->
       <div class="flex items-center">
-        <a href="https://github.com/azin-violet" class="text-xl" target="_blank">
+        <a :href="appStore.repo" class="block" target="_blank">
           <IconGithub />
         </a>
       </div>
@@ -25,16 +28,9 @@
 <script setup lang="ts">
 import IconMenu from '~icons/mdi/menu'
 import IconGithub from '~icons/mdi/github'
-import { useAppStore } from '@/store/app';
+import { useAppStore } from '@/store/app'
+import { useToggle } from '@/composable/useToggle'
 
 const appStore = useAppStore()
-
-const toggle = () => {
-  appStore.setCollapse(!appStore.collapse)
-}
+const { toggleSidebar } = useToggle()
 </script>
-<style scoped>
-button {
-  transition: all 300ms ease;
-}
-</style>

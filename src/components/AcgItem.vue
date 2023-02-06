@@ -1,6 +1,6 @@
 <template>
   <div
-    class="item flex max-w-full px-2 h-4rem border rounded-md bg-light-100 shadow-xl relative"
+    class="item flex max-w-full px-2 h-4rem border rounded-md bg-light-100 shadow-xl relative acg-transition"
     @click="toDeatil()"
   >
     <div class="h-full flex items-center">
@@ -16,7 +16,7 @@
     </div>
     <div
       @click.stop="toExternel()"
-      class="w-16px flex items-center text-[var(--color-light)] hover:text-[var(--color-default)]"
+      class="w-16px flex items-center text-$color-light hover:text-$color-default"
     >
       <IconChevronRightCircleOutline />
     </div>
@@ -48,14 +48,6 @@ const toExternel = () => {
 }
 </script>
 <style scoped>
-.overflow-clip {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-.item {
-  transition: all 300ms ease;
-}
 .item:hover {
   transform: translateY(-0.25rem);
   cursor: pointer;
@@ -79,7 +71,6 @@ const toExternel = () => {
   opacity: 0;
   transition: opacity 300ms ease;
 }
-
 .tooltiptext::after {
   content: '';
   position: absolute;
@@ -90,7 +81,6 @@ const toExternel = () => {
   border-style: solid;
   border-color: transparent transparent #555 transparent;
 }
-
 .item:hover .tooltiptext {
   visibility: visible;
   opacity: 1;

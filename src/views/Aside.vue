@@ -1,57 +1,60 @@
 <template>
   <aside
-    class="h-screen bg-[var(--background-color)] left-0 top-0 z-20"
+    class="h-screen bg-$background-color left-0 top-0 z-20 acg-transition"
     :class="{
-      'w-[var(--sidebar-width)]': !appStore.collapse,
-      'w-[var(--sidebar-width-collapse)]': appStore.collapse && !appStore.isMobile,
+      'w-$sidebar-width': !appStore.collapse,
+      'w-$sidebar-width-collapse': appStore.collapse && !appStore.isMobile,
       'w-0': appStore.collapse && appStore.isMobile,
+      // prettier-ignore
       'fixed': appStore.isMobile,
+      // prettier-ignore
       'sticky': !appStore.isMobile,
     }"
   >
     <!-- sidebar header -->
-    <div class="h-[var(--header-height)] left-0 top-0 flex text-xl lg:text-2xl font-semibold">
-      <div class="w-[var(--sidebar-width-collapse)] flex items-center justify-center">
-        <RouterLink :to="{ name: 'Root' }"><img src="@/assets/vue.svg" alt="logo" class="h-8 lg:h-10" /></RouterLink>
+    <div class="h-$header-height flex text-xl lg:text-2xl font-semibold">
+      <div class="w-$sidebar-width-collapse flex items-center justify-center">
+        <RouterLink :to="{ name: 'Root' }">
+          <img src="@/assets/vue.svg" alt="logo" class="h-8 lg:h-10" />
+        </RouterLink>
       </div>
-      <div
-        class="flex-1 flex items-center ml-1 truncate"
-        v-show="!appStore.collapse"
-      >
-        <RouterLink :to="{ name: 'Root' }"
-          ><span>{{ appStore.title }}</span></RouterLink
-        >
+      <div class="flex-1 flex items-center ml-1 truncate" v-show="!appStore.collapse">
+        <RouterLink :to="{ name: 'Root' }">
+          <span>{{ appStore.title }}</span>
+        </RouterLink>
       </div>
     </div>
     <!-- sidebar header end -->
-
     <!-- sidebar menu -->
-    <div class="overflow-y-auto h-[calc(100vh-var(--header-height)-4rem)]">
-      <MenuItem url="#item-1" title="在线动漫" v-for="idx in 5" :key="idx" />
+    <div class="overflow-auto h-[calc(100vh-var(--header-height)-var(--sidebar-anchor-height))]">
+      <MenuItem
+        :title="section.categeryName"
+        :url="`#section-${idx}`"
+        v-for="(section, idx) in sitesData"
+        :key="idx"
+        class="h-$sidebar-menu-item-height"
+      />
     </div>
     <!-- sidebar menu end -->
-    <div>
-      <MenuItem url="info" title="投稿&反馈" class="bg-[#fff] left-0 bottom-0" />
+    <!-- sidebar anchor -->
+    <div class="h-$sidebar-anchor-height">
+      <MenuItem url="#" title="投稿&反馈" class="h-full" />
     </div>
+    <!-- sidebar anchor end -->
   </aside>
 </template>
 <script setup lang="ts">
 import MenuItem from '@/components/MenuItem.vue'
 import { useAppStore } from '@/store/app'
 import { onMounted } from 'vue'
+import { sitesData } from '@/constants'
 
 const appStore = useAppStore()
 onMounted(() => {
   if (appStore.isMobile) {
     appStore.setCollapse(true)
-  }
-  else {
+  } else {
     appStore.setCollapse(false)
   }
 })
 </script>
-<style scoped>
-aside {
-  transition: all 300ms ease;
-}
-</style>

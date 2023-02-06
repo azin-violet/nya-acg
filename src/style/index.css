@@ -5,10 +5,14 @@
   --color-hover: hotpink;
   --color-tooltip: #fff;
   --color-tooltip-bg: #555;
+  
   --font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  --header-height: 4rem;
+  --header-height: 64px;
+
   --sidebar-width: 14rem;
   --sidebar-width-collapse: 60px;
+  --sidebar-anchor-height: 4rem;
+  --sidebar-menu-item-height: 4rem;
 
   --windi-bg: #fcfcfc;
   --windi-hover-bg: #f6f6f6;
@@ -21,7 +25,13 @@ body {
   background-color: var(--background-color);
 }
 
+.overflow-clip {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 
+/* style scrollbar */
 *::-webkit-scrollbar {
   background-color: transparent;
   width: 12px;

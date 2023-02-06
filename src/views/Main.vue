@@ -1,10 +1,10 @@
 <template>
   <div class="relative flex">
-      <Aside />
-      <div class="flex-1 relative">
-        <Header />
-        <Content />
-      </div>
+    <Aside />
+    <div class="flex-1 relative">
+      <Header />
+      <Content />
+    </div>
     <div class="mask" v-if="!appStore.collapse && appStore.isMobile" @click="toggleSidebar()"></div>
   </div>
 </template>

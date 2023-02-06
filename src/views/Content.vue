@@ -1,6 +1,6 @@
 <template>
   <div class="px-2 w-full">
-    <AcgSection v-for="section in sitesData" v-bind="section" />
+    <AcgSection v-for="(section, idx) in sitesData" v-bind="section" :index="idx" :key="idx" />
     <div class="h-5rem"></div>
     <footer>
       <div class="p-4 text-xs">
