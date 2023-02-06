@@ -1,5 +1,5 @@
 <template>
-  <div class="px-2 container">
+  <div class="px-2 w-full">
     <AcgSection v-for="section in sitesData" v-bind="section" />
     <div class="h-5rem"></div>
     <footer>

@@ -1,9 +1,9 @@
 <template>
-  <RouterLink :to="props.url" class="block flex w-full hover:text-[var(--color-hover)] h-4rem">
+  <RouterLink :to="props.url" class="block flex w-full hover:text-[var(--color-hover)] h-4rem trans truncate">
     <div class="h-full flex items-center justify-center w-[var(--sidebar-width-collapse)] text-lg">
       <component :is="props.icon" />
     </div>
-    <div v-if="!appStore.collapse" class="flex-1 flex items-center ml-2 desp">
+    <div v-if="!appStore.collapse" class="flex-1 flex items-center ml-2">
       <span>{{ props.title }}</span>
     </div>
   </RouterLink>
@@ -25,7 +25,7 @@ const props = withDefaults(defineProps<Props>(), {
 const appStore = useAppStore()
 </script>
 <style scoped>
-.desp {
+.trans {
   transition: all 300ms ease;
 }
 </style>

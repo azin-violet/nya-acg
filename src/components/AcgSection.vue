@@ -4,7 +4,7 @@
       <IconLinkVariant />
       <span class="ml-2">{{ props.categeryName }}</span>
     </div>
-    <div class="grid grid-cols-2 gap-x-3 gap-y-5">
+    <div class="grid grid-cols-2 gap-x-3 gap-y-5 md:grid-cols-3 lg:grid-cols-5">
       <AcgItem v-for="item in props.items" v-bind="item"/>
     </div>
   </section>
