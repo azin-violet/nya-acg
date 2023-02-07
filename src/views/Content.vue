@@ -1,6 +1,6 @@
 <template>
   <div class="px-2 w-full">
-    <AcgSection v-for="(section, idx) in sitesData" v-bind="section" :index="idx" :key="idx" />
+    <AcgSection v-for="(section, idx) in acgCollection" v-bind="section" :index="idx" :key="idx" />
     <div class="h-5rem"></div>
     <footer>
       <div class="p-4 text-xs">
@@ -13,5 +13,5 @@
 </template>
 <script setup lang="ts">
 import AcgSection from '@/components/AcgSection.vue'
-import { sitesData } from '@/constants'
+import { acgCollection } from '@/constants'
 </script>

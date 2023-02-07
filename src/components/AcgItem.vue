@@ -5,7 +5,7 @@
   >
     <div class="h-full flex items-center">
       <div class="w-8 h-8 flex items-center justify-center mr-2">
-        <img :src="props.imageUrl" alt="logo" />
+        <img :src="props.favicon" alt="logo" />
       </div>
     </div>
     <div class="overflow-hidden my-auto mr-1 flex-1">
@@ -30,21 +30,23 @@
 <script setup lang="ts">
 import IconChevronRightCircleOutline from '~icons/mdi/chevron-right-circle-outline'
 
-interface Item {
-  imageUrl: string
+interface Props {
   title: string
+  url: string
+  favicon?: string
   description: string
-  exteralUrl: string
 }
 
-const props = defineProps<Item>()
+const props = withDefaults(defineProps<Props>(), {
+  favicon: 'src/assets/imgs/noFavicon.png',
+})
 
 const toDeatil = () => {
   console.log('navigating to relative detail page...')
 }
 
 const toExternel = () => {
-  window.open(props.exteralUrl)
+  window.open(props.url)
 }
 </script>
 <style scoped>

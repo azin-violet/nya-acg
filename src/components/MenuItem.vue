@@ -14,17 +14,14 @@
 <script setup lang="ts">
 import type { Component } from 'vue'
 import type { RouteLocationRaw } from 'vue-router'
-import IconN from '~icons/mdi/alpha-n-circle-outline'
 import { useAppStore } from '@/store/app'
 
 interface Props {
-  icon?: Component
+  icon: Component
   title: string
   url: RouteLocationRaw
 }
 
-const props = withDefaults(defineProps<Props>(), {
-  icon: IconN,
-})
+const props = defineProps<Props>()
 const appStore = useAppStore()
 </script>

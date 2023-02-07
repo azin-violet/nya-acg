@@ -28,17 +28,18 @@
     <!-- sidebar menu -->
     <div class="overflow-auto h-[calc(100vh-var(--header-height)-var(--sidebar-anchor-height))]">
       <MenuItem
-        :title="section.categeryName"
-        :url="`#section-${idx}`"
-        v-for="(section, idx) in sitesData"
+        v-for="(section, idx) in acgCollection"
         :key="idx"
+        :title="section.name"
+        :url="`#${section.category}`"
+        :icon="iconMap[section.category]"
         class="h-$sidebar-menu-item-height"
       />
     </div>
     <!-- sidebar menu end -->
     <!-- sidebar anchor -->
     <div class="h-$sidebar-anchor-height">
-      <MenuItem url="#" title="投稿&反馈" class="h-full" />
+      <MenuItem url="#" title="投稿&反馈" :icon="IconFeedback" class="h-full" />
     </div>
     <!-- sidebar anchor end -->
   </aside>
@@ -47,7 +48,8 @@
 import MenuItem from '@/components/MenuItem.vue'
 import { useAppStore } from '@/store/app'
 import { onMounted } from 'vue'
-import { sitesData } from '@/constants'
+import { acgCollection, iconMap } from '@/constants'
+import IconFeedback from '~icons/mdi/text-box-edit-outline'
 
 const appStore = useAppStore()
 onMounted(() => {
