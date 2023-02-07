@@ -1,12 +1,12 @@
 <template>
   <RouterLink
     :to="props.url"
-    class="block flex w-full hover:text-$color-hover truncate acg-transition"
+    class="block flex w-full hover:text-$color-hover acg-transition"
   >
     <div class="h-full flex items-center justify-center w-$sidebar-width-collapse text-xl">
       <component :is="props.icon" />
     </div>
-    <div v-if="!appStore.collapse" class="flex-1 flex items-center">
+    <div v-if="!appStore.collapse" class="flex-1 flex items-center truncate">
       <span>{{ props.title }}</span>
     </div>
   </RouterLink>

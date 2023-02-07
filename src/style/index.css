@@ -1,7 +1,10 @@
 :root {
-  --background-color: rgb(255, 255, 255);
+  --nya-bg: #f1f1f1;
+  --nya-bg-menu: #f5f5f5;
+  --nya-bg-header: #fafafa;
+  --nya-bg-header-aside: #fdfdfd;
+  --nya-text: #4c4c4c;
   --color-light: #606266;
-  --color-defalut: #000000;
   --color-hover: hotpink;
   --color-tooltip: #fff;
   --color-tooltip-bg: #555;
@@ -22,7 +25,8 @@
 
 body {
   font-family: var(--font-family);
-  background-color: var(--background-color);
+  background-color: var(--nya-bg);
+  color: var(--nya-text)
 }
 
 .overflow-clip {

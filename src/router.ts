@@ -1,13 +1,19 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import type { RouteRecordRaw } from 'vue-router'
-import Main from './views/Main.vue'
+import Content from './views/Content.vue'
+import Feedback from '@/views/Feedback.vue'
 
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
     name: 'Root',
-    component: Main,
+    component: Content,
   },
+  {
+    path: '/feedback',
+    name: 'Feedback',
+    component: Feedback,
+  }
 ]
 
 const router = createRouter({

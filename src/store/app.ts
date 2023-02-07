@@ -5,7 +5,7 @@ export const useAppStore = defineStore({
   state: () => ({
     collapse: false,
     isMobile: false,
-    title: 'V-Acg',
+    title: 'NyaAcg',
     repo: 'https://github.com/azin-violet',
   }),
   getters: {

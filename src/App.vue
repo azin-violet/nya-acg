@@ -1,7 +1,8 @@
 <script lang="ts" setup>
-import { useWindowSize } from '@vueuse/core';
-import { watch } from 'vue';
-import { useAppStore } from './store/app';
+import Main from './views/Main.vue'
+import { useWindowSize } from '@vueuse/core'
+import { watch } from 'vue'
+import { useAppStore } from './store/app'
 const appStore = useAppStore()
 
 watch(
@@ -9,16 +10,15 @@ watch(
   (newVal) => {
     if (newVal < 640) {
       appStore.setMobile(true)
-    }
-    else {
+    } else {
       appStore.setMobile(false)
     }
   },
   {
-    immediate: true
+    immediate: true,
   }
 )
 </script>
 <template>
-  <RouterView />
+  <Main />
 </template>

@@ -1,6 +1,6 @@
 <template>
   <header
-    class="sticky top-0 left-0 backdrop-filter backdrop-blur-sm z-10 h-$header-height w-full text-xl"
+    class="sticky top-0 left-0 backdrop-filter bg-$nya-bg-header backdrop-blur-sm z-10 h-$header-height w-full text-xl"
   >
     <div class="flex h-full px-2 justify-between">
       <div class="flex items-center">
@@ -18,7 +18,7 @@
         </RouterLink>
       </div> -->
       <div class="flex items-center">
-        <a :href="appStore.repo" class="block" target="_blank">
+        <a :href="appStore.repo" class="block lg:mr-2rem" target="_blank">
           <IconGithub />
         </a>
       </div>
