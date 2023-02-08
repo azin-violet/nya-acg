@@ -5,7 +5,12 @@
       <span class="ml-2">{{ props.name }}</span>
     </div>
     <div class="grid grid-cols-2 gap-x-3 gap-y-5 md:grid-cols-3 lg:grid-cols-5">
-      <AcgItem v-for="(item, idx) in props.sites" v-bind="item" :key="idx" />
+      <AcgItem v-for="(item, idx) in props.sites" 
+      :abstract="item.abstract"
+      :favicon="item.favicon"
+      :title="item.title"
+      :url="item.url"
+      :key="idx" />
     </div>
   </section>
 </template>

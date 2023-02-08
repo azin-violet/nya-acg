@@ -5,8 +5,8 @@
     <div class="flex h-full px-2 justify-between">
       <div class="flex items-center">
         <button
-          @click="toggleSidebar()"
-          class="flex items-center hover:text-$color-hover acg-transition"
+          @click="appStore.setCollapse(!appStore.collapse)"
+          class="flex items-center hover:text-$nya-text-hover acg-transition"
         >
           <IconMenu />
         </button>
@@ -18,6 +18,10 @@
         </RouterLink>
       </div> -->
       <div class="flex items-center">
+        <div class="mr-4 hover:cursor-pointer" @click="toggleDark()">
+          <IconNight v-if="isDark" />
+          <IconSun v-else />
+        </div>
         <a :href="appStore.repo" class="block lg:mr-2rem" target="_blank">
           <IconGithub />
         </a>
@@ -28,9 +32,12 @@
 <script setup lang="ts">
 import IconMenu from '~icons/mdi/menu'
 import IconGithub from '~icons/mdi/github'
+import IconNight from '~icons/mdi/weather-night'
+import IconSun from '~icons/mdi/weather-sunny'
+import { useDark, useToggle } from '@vueuse/core'
 import { useAppStore } from '@/store/app'
-import { useToggle } from '@/composable/useToggle'
 
+const isDark = useDark()
+const toggleDark = useToggle(isDark)
 const appStore = useAppStore()
-const { toggleSidebar } = useToggle()
 </script>

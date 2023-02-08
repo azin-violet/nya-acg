@@ -1,0 +1,12 @@
+html.dark {
+  --nya-bg: #2d2d2d;
+  --nya-bg-menu: #313131;
+  --nya-bg-header: rgba(62, 62, 62, 0.502);
+  --nya-bg-header-aside: #373737;
+  --nya-text: #c3c3c3;
+  --nya-text-light: #b4b4b5;
+  --nya-text-hover: #ff69b4;
+  --nya-tooltip: #fff;
+  --nya-tooltip-bg: #555;
+  --nya-acg-item-bg: #404040;
+}
