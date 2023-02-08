@@ -15,7 +15,7 @@
     <div class="h-$header-height bg-$nya-bg-header-aside flex text-xl lg:text-2xl font-semibold text-black dark:text-white">
       <div class="w-$sidebar-width-collapse flex items-center justify-center">
         <RouterLink :to="{ name: 'Root' }">
-          <img src="@/assets/vue.svg" alt="logo" class="h-8 lg:h-10" />
+          <img src="@/assets/hutao.png" alt="logo" class="h-8 lg:h-10 rounded-sm" />
         </RouterLink>
       </div>
       <div class="flex-1 flex items-center truncate" v-show="!appStore.collapse">
