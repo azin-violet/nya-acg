@@ -15,6 +15,8 @@ const props = defineProps<Props>()
 <style scoped>
 .tip-text {
   position: absolute;
+  width: max-content;
+  max-width: 80%;
   visibility: hidden;
   color: var(--nya-tooltip);
   background-color: var(--nya-tooltip-bg);

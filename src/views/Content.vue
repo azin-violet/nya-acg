@@ -6,5 +6,5 @@
 </template>
 <script setup lang="ts">
 import AcgSection from '@/components/AcgSection.vue'
-import { acgCollection } from '@/constants'
+import { acgCollection } from '@/info'
 </script>

@@ -18,7 +18,7 @@
 <script setup lang="ts">
 import AcgItem from './AcgItem.vue'
 import IconLinkVariant from '~icons/mdi/link-variant'
-import type { AcgCategory, AcgSite } from '@/constants';
+import type { AcgCategory, AcgSite } from '@/info';
 
 interface Props {
   name: string,

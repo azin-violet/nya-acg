@@ -49,7 +49,7 @@
 import MenuItem from '@/components/MenuItem.vue'
 import { useAppStore } from '@/store/app'
 import { onMounted } from 'vue'
-import { acgCollection, iconMap } from '@/constants'
+import { acgCollection, iconMap } from '@/info'
 import IconFeedback from '~icons/mdi/text-box-edit-outline'
 
 const appStore = useAppStore()
