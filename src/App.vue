@@ -5,6 +5,7 @@ import { watch } from 'vue'
 import { useAppStore } from './store/app'
 const appStore = useAppStore()
 
+document.title = `Home | ${appStore.title}`
 watch(
   useWindowSize().width,
   (newVal) => {

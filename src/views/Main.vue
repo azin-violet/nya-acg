@@ -1,9 +1,9 @@
 <template>
   <div class="relative flex">
     <Aside />
-    <div class="flex-1 relative">
+    <div class="flex-1 relative flex flex-col min-h-screen">
       <Header />
-      <RouterView />
+      <RouterView class="flex-1"/>
       <footer>
         <div class="p-5 text-xs">
           Copyright © 2023 {{ appStore.title }}&nbsp;&nbsp;&nbsp;Design by

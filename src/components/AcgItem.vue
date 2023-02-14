@@ -43,7 +43,8 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const toDeatil = () => {
-  console.log('navigating to relative detail page...')
+  window.open(props.url)
+  // console.log('navigating to relative detail page...')
 }
 
 const toExternel = () => {

@@ -1,6 +1,6 @@
 <template>
   <aside
-    class="h-screen left-0 top-0 z-20 acg-transition"
+    class="h-screen left-0 top-0 z-20 acg-transition flex flex-col"
     :class="{
       'w-$sidebar-width': !appStore.collapse,
       'w-$sidebar-width-collapse': appStore.collapse && !appStore.isMobile,
@@ -12,27 +12,27 @@
     }"
   >
     <!-- sidebar header -->
-    <div class="h-$header-height bg-$nya-bg-header-aside flex text-xl lg:text-2xl font-semibold text-black dark:text-white">
+    <div class="h-$header-height bg-$nya-bg-header-aside flex text-xl lg:text-2xl font-semibold text-black dark:text-white" >
       <div class="w-$sidebar-width-collapse flex items-center justify-center">
-        <RouterLink :to="{ name: 'Root' }">
+        <RouterLink :to="{ name: 'Home' }">
           <img src="@/assets/hutao.png" alt="logo" class="h-8 lg:h-10 rounded-sm" />
         </RouterLink>
       </div>
       <div class="flex-1 flex items-center truncate" v-show="!appStore.collapse">
-        <RouterLink :to="{ name: 'Root' }">
+        <RouterLink :to="{ name: 'Home' }">
           <span class="ml-2">{{ appStore.title }}</span>
         </RouterLink>
       </div>
     </div>
     <!-- sidebar header end -->
     <!-- sidebar menu -->
-    <div class="overflow-auto h-[calc(100vh-var(--header-height)-var(--sidebar-anchor-height))] bg-$nya-bg-menu">
+    <div class="overflow-auto bg-$nya-bg-menu flex-1">
       <MenuItem
         @click="smartCollapse()"
         v-for="(section, idx) in acgCollection"
         :key="idx"
         :title="section.name"
-        :url="{name: 'Root', hash: `#${section.category}`}"
+        :url="{name: 'Home', hash: `#${section.category}`}"
         :icon="iconMap[section.category]"
         class="h-$sidebar-menu-item-height"
       />

@@ -8,6 +8,6 @@ import '@/style/index.css'
 const pinia = createPinia()
 
 createApp(App)
-.use(router)
 .use(pinia)
+.use(router)
 .mount('#app')

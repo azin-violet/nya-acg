@@ -4,7 +4,7 @@
       <IconLinkVariant />
       <span class="ml-2">{{ props.name }}</span>
     </div>
-    <div class="grid grid-cols-2 gap-x-3 gap-y-5 md:grid-cols-3 lg:grid-cols-5">
+    <div class="grid grid-cols-2 gap-x-3 gap-y-5 md:grid-cols-3 lg:grid-cols-5 lg:(gap-x-5 gap-y-7)">
       <AcgItem v-for="(item, idx) in props.sites" 
       :abstract="item.abstract"
       :favicon="item.favicon"
