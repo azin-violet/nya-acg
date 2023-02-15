@@ -6,7 +6,7 @@ export const useAppStore = defineStore({
     collapse: false,
     isMobile: false,
     title: 'NyaAcg',
-    repo: 'https://github.com/azin-violet',
+    repo: 'https://github.com/azin-violet/nya-acg',
   }),
   getters: {
   },

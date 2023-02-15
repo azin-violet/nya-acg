@@ -19,7 +19,7 @@ const routes: RouteRecordRaw[] = [
 ]
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHashHistory(import.meta.env.VITE_BASE_PATH),
   routes,
   // navigation in page
   scrollBehavior(to, from, savedPosition) {
