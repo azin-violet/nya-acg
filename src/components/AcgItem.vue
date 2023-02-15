@@ -30,6 +30,7 @@
 <script setup lang="ts">
 import IconChevronRightCircleOutline from '~icons/mdi/chevron-right-circle-outline'
 import Tooltip from './Tooltip.vue'
+import faviconUrl from '@/assets/imgs/noFavicon.png'
 
 interface Props {
   title: string
@@ -39,7 +40,7 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  favicon: 'src/assets/imgs/noFavicon.png',
+  favicon: faviconUrl,
 })
 
 const toDeatil = () => {
