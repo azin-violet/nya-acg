@@ -3,7 +3,7 @@
     <Aside />
     <div class="flex-1 relative flex flex-col min-h-screen">
       <Header />
-      <RouterView class="flex-1"/>
+      <RouterView class="flex-1" />
       <footer>
         <div class="p-5 text-xs">
           Copyright © 2023 {{ appStore.title }}&nbsp;&nbsp;&nbsp;Design by
@@ -18,12 +18,16 @@
       v-if="!appStore.collapse && appStore.isMobile"
       @click="appStore.setCollapse(!appStore.collapse)"
     ></div>
+    <Backtop class="z-100" v-show="y > 50" />
   </div>
 </template>
 <script setup lang="ts">
+import { useScroll } from '@vueuse/core'
 import Header from './Header.vue'
 import Aside from './Aside.vue'
 import { useAppStore } from '@/store/app'
+import Backtop from '@/components/Backtop.vue'
+const { y } = useScroll(window)
 
 const appStore = useAppStore()
 </script>
