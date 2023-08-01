@@ -7,7 +7,7 @@
     <div class="grid grid-cols-2 gap-x-3 gap-y-5 md:grid-cols-3 lg:grid-cols-5 lg:(gap-x-5 gap-y-7)">
       <AcgItem v-for="(item, idx) in props.sites" 
       :abstract="item.abstract"
-      :favicon="item.favicon"
+      :favicon="!item.favicon ? 'http://www.google.com/s2/favicons?domain=' + item.url : item.favicon == ' ' ? undefined : item.favicon"
       :title="item.title"
       :url="item.url"
       :key="idx" />
