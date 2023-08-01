@@ -54,6 +54,10 @@ const toDeatil = () => {
 
 const toExternel = () => {
   window.open(props.url)
+  const delId = visitedUrls.value.indexOf(props.url)
+  if (delId != -1) {
+    visitedUrls.value.splice(delId, 1)
+  }
   visitedUrls.value.unshift(props.url)
   if (visitedUrls.value.length > 6) {
     visitedUrls.value.pop()
