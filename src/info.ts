@@ -3,6 +3,7 @@ import IconPlay from '~icons/mdi/motion-play-outline'
 import IconBrush from '~icons/mdi/brush-outline'
 import IconG from '~icons/mdi/alpha-g-circle-outline'
 import IconBook from '~icons/mdi/book-open'
+import IconHistory from '~icons/mdi/history'
 
 interface AcgSite {
   title: string
@@ -16,15 +17,21 @@ interface AcgField {
   category: AcgCategory
   sites: AcgSite[]
 }
-type AcgCategory = 'anime' | 'manga' | 'galgame' | 'novel'
+type AcgCategory = 'anime' | 'manga' | 'galgame' | 'novel' | 'history'
 
 const iconMap: Record<AcgCategory, Component> = {
   anime: IconPlay,
   manga: IconBrush,
   galgame: IconG,
   novel: IconBook,
+  history: IconHistory,
 }
 const acgCollection: AcgField[] = [
+  {
+    name: '最近查看',
+    category: 'history',
+    sites: [],
+  },
   {
     name: '动漫',
     category: 'anime',
