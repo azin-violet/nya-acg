@@ -1,5 +1,5 @@
 # Nya Acg
-> nya~ desu
+> nya~
 ## Introduction
 A simple navigation website featured with ACG theme, powered by vue framework.
 
